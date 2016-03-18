@@ -24,6 +24,7 @@ label {
 .bar-finished {
 	background: rgba(231, 60, 60, 1);
 	color: black;	
+	opacity:1;
 }
 
 #bar-outer {

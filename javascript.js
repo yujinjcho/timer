@@ -43,6 +43,7 @@
 
   function barEndAlert() {
     innerBar.className = finishedClass;
+    messageContainer.className = finishedClass;    
     messageContainer.textContent = finishedMessage;
     if (alertElem.checked) {
       audio.play();
