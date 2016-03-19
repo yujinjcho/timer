@@ -3,11 +3,22 @@
   var innerBar = document.getElementById("bar-inner");
   var inputElem = document.getElementById("timeInput");
   var alertElem = document.getElementById("alertBox");
+  var recentElems = document.getElementsByClassName('recent');
   var activeClass = 'bar-active';
   var finishedClass = 'bar-finished';
   var finishedMessage = "Timer Finished";
   var id;
   var audio = new Audio('censor-beep-7.mp3');
+
+  function updateRecent(start) {
+    debugger;
+    var recentValues = [0, 1, 2, 3].map(function(n) {return recentElems[n].dataset.value;});
+    recentValues.pop();
+    recentValues.unshift(start);
+    //you mentioned use dataset to store information, but is this redunant, should I just use innerHTML?
+    [0, 1, 2, 3].map(function(n) {recentElems[n].dataset.value = recentValues[n]; 
+                                  recentElems[n].innerHTML = recentElems[n].dataset.value;});
+  }
 
   function setTime(time, start) {
     return function() {	
@@ -17,6 +28,7 @@
         .map(formatTime);
 
       messageContainer.textContent = hms.join(':');
+      
       updateBar(elapsed, time);
       if (elapsed >= time) {
         clearInterval(id);
@@ -56,17 +68,28 @@
     innerBar.style.width = leftWidth + 'px';
   }
 
-  function startTimer() {
+  function sendInput() {
+    var currentInput = inputElem.value.split(':').map(function(t) { return parseInt(t); });
+    startTimer(currentInput);
+    updateRecent(inputElem.value); 
+  }
+
+  function startTimer(start) {
     clearInterval(id);
     reset();
-    var currentInput = inputElem.value.split(':').map(function(t) { return parseInt(t); });
-    var time = currentInput[0] * 60 * 60 + currentInput[1] * 60 + currentInput[2];
+    var time = start[0] * 60 * 60 + start[1] * 60 + start[2]; //update with receiving value
     id = setInterval(setTime(time, new Date()), 1000);
   }
 
   function setInput() {
-    document.getElementById('startButton').addEventListener('click', startTimer);
+    document.getElementById('startButton').addEventListener('click', sendInput);
     document.getElementById("timeInput").addEventListener('keydown', handleKey);
+    [0,1,2,3].map(function(pos){document.getElementsByClassName('recent')[pos].addEventListener('click', handleRepeat)});
+  }
+
+  function handleRepeat(e) {
+    start = e.target.dataset.value.split(':').map(function(t) { return parseInt(t); });
+    startTimer(start);
   }
 
   function handleKey(e) {
@@ -74,13 +97,13 @@
     var start = e.target.value.replace(/:/g, '');
 
     if (e.keyCode === 13) {
-      startTimer();
+      sendInput();
     } else if (e.keyCode === 8) {
       start = '0' + start;
     } else if (isNumber(e.keyCode) && start[0] === '0') {
       start = (start + String.fromCharCode(e.keyCode)).slice(1,7);
     };
-
+    
     inputElem.value = returnStart(start);
   }
 
@@ -96,6 +119,7 @@
   }	
 
   function reset() {
+    messageContainer.className = "";
     innerBar.className = activeClass;
     messageContainer.textContent = "";
     innerBar.style.width = "0px";

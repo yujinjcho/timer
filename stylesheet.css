@@ -17,22 +17,21 @@ label {
 }
 
 .bar-active {
-	background: rgba(97, 234, 157, 1);
+	background: #6a9a1f;
 	color: rgba(0, 0, 0, 0);
 }
 
 .bar-finished {
-	background: rgba(231, 60, 60, 1);
+	background: #d43f3f;
 	color: black;	
 	opacity:1;
 }
 
-#bar-outer {
+.bar-outer {
   position: relative;
 	border: 1px solid gray;
 	width: 220px;
 	height: 40px;
-	margin-top: 10px;
 }
 
 #bar-inner {
@@ -55,3 +54,36 @@ label {
 #message-container:hover {
 	opacity: 1;
 }
+
+.title {
+	margin:5px 0 0 0;
+	font-size: 11px;
+}
+
+.recent {
+	border: 1px dotted gray;
+	width: 42px;
+	height: 30px;
+	display: inline-block;
+	padding: 4px;
+}
+
+.recent {
+	vertical-align: top;
+	background: #00ace9;
+	border: 1px solid gray;
+	width: 40px;
+	height: 30px;
+	display: inline-block;
+	padding: 4px;
+	font-size: 12px;
+	line-height: 27px;
+	margin: 1px;
+	;
+}
+
+.recent:hover {
+	background: #1dc4ff;
+	;
+}
+

@@ -5,11 +5,21 @@
 	<title>Timer</title>
 </head>
 <body>
-		
+	
+	<p class='title'>Time</p>		
 	<input type="text" id="timeInput" value="00:00:00" onfocus="this.value = this.value;" autofocus>
 	<button id="startButton">Start</button>
 
-	<div id="bar-outer">
+	<p class='title'>Recent</p>
+	<div>
+		<div class="recent" data-value=""></div>
+		<div class="recent" data-value=""></div>
+		<div class="recent" data-value=""></div>
+		<div class="recent" data-value=""></div>
+	</div>
+
+	<p class='title'>Status</p>
+	<div class="bar-outer">
 		<div id="bar-inner"></div>
 		<div id="message-container"></div>
 	</div>
