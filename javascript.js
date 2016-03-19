@@ -89,7 +89,9 @@
 
   function handleRepeat(e) {
     start = e.target.dataset.value.split(':').map(function(t) { return parseInt(t); });
-    startTimer(start);
+    if (e.target.dataset.value != "") {
+      startTimer(start);  
+    }
   }
 
   function handleKey(e) {
@@ -103,7 +105,7 @@
     } else if (isNumber(e.keyCode) && start[0] === '0') {
       start = (start + String.fromCharCode(e.keyCode)).slice(1,7);
     };
-    
+
     inputElem.value = returnStart(start);
   }
 

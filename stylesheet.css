@@ -1,15 +1,44 @@
+body {
+	background:#E7E9EC;
+	font-family: Helvetica;
+}
+
+h2 {
+	margin: 13px 5px 15px 5px;
+	font-size: 16px;
+	text-align: left;
+	border-bottom: 1px solid rgba(30, 30, 30, .4);
+}
+
+#container {
+	border: 0.5px solid rgba(30,30,30,.2);
+	background: white;
+	width: 230px;
+	margin: 20px auto;
+	padding: 5px;
+	text-align: center;
+}
+
+button {
+	height:40px;
+	width: 50px;
+}
+
 #timer {
 	font-size: 100px;
 }
 
 label {
-	font-family: helvetica;
-	font-size: 13px;
+	font-size: 14px;
 }
 
 #timeInput {
 	text-align: right;
 	border: 1px solid gray;
+	height: 40px;
+	font-size: 20px;
+	padding-right: 10px;
+	width: 155px;
 }
 
 #alertBox {
@@ -30,8 +59,10 @@ label {
 .bar-outer {
   position: relative;
 	border: 1px solid gray;
+	margin: 0px auto;
 	width: 220px;
 	height: 40px;
+
 }
 
 #bar-inner {
@@ -44,11 +75,13 @@ label {
 
 #message-container {
   opacity: 0;
-  position: absolute;
+  position: absolute; 
   width: 100%;
   height: 40px;
   line-height: 40px;
   text-align: center;
+  font-size: 18px;
+  font-weight: Bold;
 }
 
 #message-container:hover {
@@ -56,10 +89,12 @@ label {
 }
 
 .title {
-	margin:5px 0 0 0;
-	font-size: 11px;
+	margin:5px 0 0 9px;
+	font-size: 14px;
+	text-align: left;
 }
 
+/*
 .recent {
 	border: 1px dotted gray;
 	width: 42px;
@@ -67,8 +102,10 @@ label {
 	display: inline-block;
 	padding: 4px;
 }
+*/
 
 .recent {
+	
 	vertical-align: top;
 	background: #00ace9;
 	border: 1px solid gray;
@@ -76,9 +113,9 @@ label {
 	height: 30px;
 	display: inline-block;
 	padding: 4px;
-	font-size: 12px;
-	line-height: 27px;
-	margin: 1px;
+	font-size: 10px;
+	line-height: 30px;
+	
 	;
 }
 
