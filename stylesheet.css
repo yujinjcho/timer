@@ -20,8 +20,9 @@ h2 {
 }
 
 button {
-	height:40px;
+	height:44px;
 	width: 50px;
+	vertical-align: top;
 }
 
 #timer {
@@ -58,7 +59,7 @@ label {
 
 .bar-outer {
   position: relative;
-	border: 1px solid gray;
+	
 	margin: 0px auto;
 	width: 220px;
 	height: 40px;
@@ -89,38 +90,86 @@ label {
 }
 
 .title {
-	margin:5px 0 0 9px;
+	margin:10px 0 2px 9px;
 	font-size: 14px;
 	text-align: left;
 }
 
-/*
-.recent {
-	border: 1px dotted gray;
-	width: 42px;
-	height: 30px;
-	display: inline-block;
-	padding: 4px;
-}
-*/
 
 .recent {
-	
 	vertical-align: top;
-	background: #00ace9;
-	border: 1px solid gray;
+	margin-top: 10px;
+	background: rgba(190,190,190,1);
+	
 	width: 40px;
 	height: 30px;
 	display: inline-block;
 	padding: 4px;
 	font-size: 10px;
-	line-height: 30px;
-	
+	line-height: 30px;	
+	border-radius: 15px;
 	;
+}
+
+#cat {
+	position: relative;
+	border: 1px solid gray;
+	margin: 0px auto;
+	width: 220px;
+	height: 40px;
+	line-height: 40px;
 }
 
 .recent:hover {
-	background: #1dc4ff;
+	/*background: #1dc4ff;*/
+	background: rgba(170,170,170,.6);;
+	cursor: pointer;
+	cursor: hand;
 	;
 }
 
+.dropbtn {
+    background-color: rgba(76,175,80,1);
+    color: white;
+    padding: 0px;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    width: 220px;
+    margin-top: 10px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    margin: -1px;
+    text-decoration: none;
+    display: block;
+    background: rgba(255, 255, 255, 1);
+    width: 190px;
+    z-index: 100;
+    position: relative;
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.show {
+	display:block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}	
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: rgba(76,175,80,.9);
+}

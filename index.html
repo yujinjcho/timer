@@ -9,11 +9,12 @@
 	<div id="container">
 		<h2>Time Tracker</h2>
 
-		<p class='title'>Time</p>		
-		<input type="text" id="timeInput" value="00:00:00" onfocus="this.value = this.value;" autofocus>
-		<button id="startButton">Start</button>
 
-		<p class='title'>Recent</p>
+		<div id="input container">
+			<input type="text" id="timeInput" value="00:00:00" onfocus="this.value = this.value;" autofocus>
+			<button id="startButton">Start</button>
+		</div>
+
 		<div>
 			<div class="recent" data-value=""></div>
 			<div class="recent" data-value=""></div>
@@ -21,7 +22,16 @@
 			<div class="recent" data-value=""></div>
 		</div>
 
-		<p class='title'>Status</p>
+		<div class="dropdown">
+			<button class="dropbtn">Select Category</button>
+			<div id="myDropdown" class="dropdown-content">
+		    <a href="#">Link 1</a>
+		    <a href="#">Link 2</a>
+		    <a href="#">Link 3</a>
+  		</div>
+		</div>
+
+		<p class='title'>Status Bar</p>
 		<div class="bar-outer">
 			<div id="bar-inner"></div>
 			<div id="message-container"></div>

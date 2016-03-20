@@ -84,7 +84,13 @@
   function setInput() {
     document.getElementById('startButton').addEventListener('click', sendInput);
     document.getElementById("timeInput").addEventListener('keydown', handleKey);
+    document.getElementsByClassName("dropbtn")[0].addEventListener('click', handleDrop);
+    window.addEventListener('click', handleOffClick);
     [0,1,2,3].map(function(pos){document.getElementsByClassName('recent')[pos].addEventListener('click', handleRepeat)});
+  }
+
+  function handleDrop() {
+    document.getElementById('myDropdown').classList.toggle("show");
   }
 
   function handleRepeat(e) {
@@ -127,5 +133,20 @@
     innerBar.style.width = "0px";
   }
 
+  function handleOffClick(e) {
+    if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+     }
+    }
+  }
+
   setInput();
+
 })();
