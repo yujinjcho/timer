@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="stylesheet" href="stylesheet.css">
+	<title>Timer</title>
+</head>
+<body>
+
+	<div id="outer-container">
+		<div class="container">
+			<h2>Time Tracker</h2>
+
+
+			<div id="input container">
+				<input type="text" id="timeInput" value="00:00:00" autofocus>
+				<button id="startButton">Start</button>
+			</div>
+
+			<div>
+				<div class="recent" data-value=""></div>
+				<div class="recent" data-value=""></div>
+				<div class="recent" data-value=""></div>
+				<div class="recent" data-value=""></div>
+			</div>
+
+			<div class="dropdown">
+				<button class="dropbtn">Select Category</button>
+				<div id="myDropdown" class="dropdown-content">
+			    <div class="categories">Work</div>
+			    <div class="categories">Break</div>
+			    <div class="categories">-- Add New --</div>
+	  		</div>
+			</div>
+
+			
+			<div class="bar-outer">
+				<div id="bar-inner"></div>
+				<div id="message-container"></div>
+			</div>
+			<p class='title'>Progress...</p>
+		
+		
+		<input type="checkbox" id="alertBox" checked><label>Alert Me</label>
+
+		</div>
+			
+		<div class="container" id="sessions-container">
+			<h2>Sessions</h2>
+				<div class="sessions">-</div>
+				<div class="sessions">-</div>
+				<div class="sessions">-</div>
+				<div class="sessions">-</div>
+				<div class="sessions">-</div>
+				<div class="sessions">-</div>
+				<div class="sessions">-</div>
+				<div class="sessions">-</div>
+				<div class="sessions">-</div>
+				<div class="sessions">-</div>
+				<div class="sessions">-</div>
+				<div class="sessions">-</div>
+		</div>
+	</div>	
+
+	<script src = "javascript.js" type = "text/javascript">	</script>
+
+	<audio id="myAudio">
+  	<source src="censor-beep-7.mp3" type="audio/mp3">
+	</audio>
+
+</body>
+</html>
