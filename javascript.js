@@ -13,6 +13,7 @@
   var finishedClass = 'bar-finished';
   var finishedMessage = "Timer Finished";
   var recentValues = [];
+  var audio = new Audio('censor-beep-7.mp3');
   
   function updateRecent(start) {
     recentValues.unshift(start);
@@ -59,6 +60,7 @@
     messageContainer.className = finishedClass;
     messageContainer.textContent = finishedMessage;
     if (alertElem.checked) {
+      audio.play();
       alert('Timer Has Ended');
     }
   }
